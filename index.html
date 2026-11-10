@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto: Primera Venta - Publicidad Local Tucumán</title>
+    <style>
+        :root {
+            --primary: #1877f2;
+            --background: #f0f2f5;
+            --card: #ffffff;
+            --text: #050505;
+            --success: #42b72a;
+            --accent: #f0f4f9;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 550px;
+            width: 100%;
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 24px;
+            margin-top: 0;
+            text-align: center;
+        }
+        h2 {
+            font-size: 18px;
+            color: var(--primary);
+            margin-top: 25px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+        }
+        p.subtitle {
+            text-align: center;
+            color: #65676b;
+            margin-bottom: 25px;
+        }
+        .study-guide {
+            background-color: var(--accent);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .study-item {
+            margin-bottom: 15px;
+        }
+        .study-item strong {
+            color: #d32f2f;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            background: #f7f8fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccd0d5;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .radio-option {
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        .radio-option input {
+            margin-top: 4px;
+            margin-right: 10px;
+        }
+        button {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #166fe5;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+        .aprobado { background-color: #e7f5e8; color: var(--success); }
+        .desaprobado { background-color: #fde8e8; color: #e41e3f; }
+        .ws-button {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🏆 Reto: Primera Venta</h1>
+    <p class="subtitle">Publicidad Local Tucumán</p>
+    
+    <!-- Sección de Repaso / Material de Estudio Integrado -->
+    <div class="study-guide">
+        <h3 style="margin-top:0; color: var(--primary);">📖 Repaso Rápido de Objeciones:</h3>
+        <div class="study-item">
+            <strong>1. Objeción: "No tengo dinero"</strong><br>
+            <em>Respuesta Experta:</em> Explicar que precisamente por eso necesitan vender. La publicidad es un motor que trae dinero, no un gasto.
+        </div>
+        <div class="study-item">
+            <strong>2. Objeción: "Ya publico gratis solo"</strong><br>
+            <em>Respuesta Experta:</em> Lo gratis solo lo ven amigos o conocidos. Nosotros hacemos publicidad paga segmentada para encontrar compradores con billetera en mano en su zona.
+        </div>
+        <div class="study-item">
+            <strong>3. Objeción: "Dejame los precios"</strong><br>
+            <em>Respuesta Experta:</em> No soltar el precio sin valor. Preguntar qué producto quieren potenciar para recomendar el paquete ideal.
+        </div>
+    </div>
+
+    <h2>📝 Cuestionario de Validación</h2>
+    <form id="quizForm">
+        <div class="form-group">
+            <label for="nombre">Tu Nombre y Apellido:</label>
+            <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+        </div>
+
+        <div class="form-group">
+            <label>1. Si un dueño de negocio en Tucumán te dice: "No tengo dinero ahora para publicidad", ¿cuál es la respuesta correcta?</label>
+            <div class="radio-option">
+                <input type="radio" name="p1" value="A" id="p1a" required>
+                <label for="p1a">"Está bien, entiendo. Lo vuelvo a llamar el mes que viene a ver si mejoró."</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="p1" value="B" id="p1b">
+                <label for="p1b">"Precisamente por eso necesitas publicidad; si no inviertes para atraer clientes, tu facturación seguirá igual. Activando esto hoy, tus ventas se moverán esta misma semana."</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>2. Según nuestra propuesta de Servicios de Publicidad Local, ¿cuál es el beneficio principal que le vendemos al comerciante?</label>
+            <div class="radio-option">
+                <input type="radio" name="p2" value="A" id="p2a" required>
+                <label for="p2a">Campañas orientadas exactamente al público de su zona específica en Tucumán que ya está buscando activamente lo que ellos venden.</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="p2" value="B" id="p2b">
+                <label for="p2b">Que van a tener muchos 'Me Gusta' y fotos lindas en su perfil personal de Facebook para hacerse conocidos.</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>3. Una vez que el cliente muestra interés en los paquetes promocionales, ¿cuál es el paso inmediato a seguir?</label>
+            <div class="radio-option">
+                <input type="radio" name="p3" value="A" id="p3a" required>
+                <label for="p3a">Esperar pacientemente a que el comerciante decida cuándo pagar y nos vuelva a escribir.</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="p3" value="B" id="p3b">
+                <label for="p3b">Guiarlo directamente al cierre diciendo: 'Excelente, pasamos tus datos para activar la campaña hoy mismo, ¿prefieres abonar por transferencia o Mercado Pago?'</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="evaluarQuiz()">Enviar y Validar Respuestas</button>
+    </form>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+    function evaluarQuiz() {
+        const nombre = document.getElementById('nombre').value;
+        if(!nombre) { alert('Por favor, ingresa tu nombre.'); return; }
+
+        const p1 = document.querySelector('input[name="p1"]:checked');
+        const p2 = document.querySelector('input[name="p2"]:checked');
+        const p3 = document.querySelector('input[name="p3"]:checked');
+
+        if(!p1 || !p2 || !p3) { alert('Por favor, responde todas las preguntas.'); return; }
+
+        let aciertos = 0;
+        if(p1.value === 'B') aciertos++;
+        if(p2.value === 'A') aciertos++;
+        if(p3.value === 'B') aciertos++;
+
+        const resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.style.display = 'block';
+
+        // Tu número de WhatsApp configurado
+        const tuTelefono = "5493815727447"; 
+
+        if(aciertos === 3) {
+            resultadoDiv.className = "aprobado";
+            resultadoDiv.innerHTML = `<p>🎉 ¡FELICITACIONES, APROBASTE CON 100%! 🎉</p>
+            <p>Ya dominas el conocimiento. Haz clic abajo para enviar tu resultado por WhatsApp y reclamar tu Bono en Efectivo.</p>
+            <a class="ws-button" href="https://wa.me{tuTelefono}?text=¡Hola! Soy ${encodeURIComponent(nombre)}. Ya logré mi primera venta de la semana y aprobé el cuestionario con 3/3 aciertos. ¡Vengo por mi capacitación y mi bono en efectivo! 💵🏆" target="_blank">Reclamar Bono en WhatsApp</a>`;
+        } else {
+            resultadoDiv.className = "desaprobado";
+            resultadoDiv.innerHTML = `<p>❌ Tienes respuestas incorrectas (${aciertos}/3 aciertos). ❌</p>
+            <p>Repasa el cuadro de estudio superior y vuelve a intentarlo para poder liberar tu efectivo.</p>`;
+        }
+    }
+</script>
+
+</body>
+</html>
